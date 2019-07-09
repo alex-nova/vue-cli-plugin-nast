@@ -1,1 +1,2 @@
-vue-cli-plugin-nast
+# vue-cli-plugin-nast
+Vue-cli plugin for nast framework.

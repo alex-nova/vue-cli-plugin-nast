@@ -1,0 +1,30 @@
+{
+  "name": "vue-cli-plugin-nast",
+  "version": "0.2.1",
+  "description": "Vue-cli plugin for nast framework",
+  "author": {
+    "name": "Alex Nova",
+    "email": "alex@nova.st"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/alex-nova/vue-cli-plugin-nast#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-nova/vue-cli-plugin-nast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alex-nova/vue-cli-plugin-nast/issues"
+  },
+  "scripts": {},
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "webpack": "^4.34.0",
+    "lodash": "^4.17.11",
+    "nast-ui": "^0.4.2"
+  }
+}
