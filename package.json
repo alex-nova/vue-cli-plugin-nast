@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-nast",
-  "version": "0.2.2",
+  "version": "0.2.12",
   "description": "Vue-cli plugin for nast framework",
   "author": {
     "name": "Alex Nova",
@@ -18,13 +18,18 @@
   "scripts": {},
   "main": "index.js",
   "dependencies": {
+    "lodash": "^4.*",
+    "nast": "latest",
+    "nast-ui": "latest"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "eslint-config-google": "^0.13.0",
+    "sass": "^1.22.3",
+    "sass-loader": "^7.1.0"
   },
   "peerDependencies": {
-    "vue": "^2.6.*",
-    "webpack": "^4.34.0",
-    "lodash": "^4.*",
-    "nast": "latest"
+    "vue": "^2.6.*"
   }
 }
