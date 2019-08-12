@@ -68,5 +68,5 @@ module.exports = (api, config) => {
 }
 
 module.exports.defaultModes = {
-  start: 'development',
+  serve: 'development',
 }

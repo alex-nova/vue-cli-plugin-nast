@@ -5,7 +5,7 @@ const nastVariables = require('nast-ui/utils/webpack/defineVariables')
 
 
 module.exports = (args, api, config) => {
-  args[0]['env'] = args[0]['env'] || 'production'
+  args[0]['env'] = args[0]['env'] || api.service.mode
   args[0]['theme'] = args[0]['theme'] || 'web'
   if (!args[0]['mode']) {
     args[0]['mode'] = args[0]['env'] === 'development' ? 'development' : 'production'
