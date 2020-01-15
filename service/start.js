@@ -2,6 +2,7 @@ const path = require('path')
 const get = require('lodash/get')
 const webpack = require('webpack')
 const nastVariables = require('nast-ui/utils/webpack/defineVariables')
+const userConfig = require('./userConfig')
 
 
 module.exports = (args, api, config) => {
@@ -12,11 +13,9 @@ module.exports = (args, api, config) => {
   }
   
   const appDir = get(config, 'pluginOptions.nast.appDir', 'app')
-  const configDir = get(config, 'pluginOptions.nast.configDir', `${appDir}/config`)
-  let nestOptions = {}
-  try {
-    nestOptions = require(path.resolve(configDir, 'nast.js'))
-  } catch (e) {} // eslint-disable-line no-empty
+  const configName = get(config, 'pluginOptions.nast.configDir', 'config')
+  const configDir = `${appDir}/${configName}`
+  const { config: appConfig, components, } = userConfig(configDir)
   
   api.chainWebpack((webpackConfig) => {
     webpackConfig.entry('app')
@@ -35,7 +34,7 @@ module.exports = (args, api, config) => {
         '$env.env': `'${args[0]['env']}'`,
         '$env.theme': `${args[0]['theme']}`,
         '$env.type': `${args[0]['type']}`,
-        ...nastVariables(nestOptions, args[0]['theme']),
+        ...nastVariables(components, args[0]['theme']),
       }, ])
   
     webpackConfig.plugin('ignore-moment-locales')
